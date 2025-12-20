@@ -1,7 +1,7 @@
 # Assortment of Small Vision ML-DL Projects
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Last Updated](https://img.shields.io/badge/last_updated-December_2025-blue)
+![Last Updated](https://img-shields.io/badge/last_updated-December_2025-blue)
 
 A focused collection of **Computer Vision** projects leveraging state-of-the-art models (**YOLOv8**, **YOLOv11**, **PaddleOCR**, and **EasyOCR**) for Object Tracking, Human Pose Estimation, Segmentation, and Text Recognition.
 
@@ -21,18 +21,18 @@ These projects demonstrate practical implementation of advanced Deep Learning vi
 
 Detects and tracks vehicles and pedestrians in traffic footage using multi-object tracking.
 
-| Model              | Input Source                  | Task                  |
-|--------------------|-------------------------------|-----------------------|
-| `yolov8n.pt` (Nano)| `Datasets/cartraffic03.mp4`   | Multi-Object Tracking |
+| Model | Input Source | Task |
+| :--- | :--- | :--- |
+| `yolov8n.pt` (Nano) | `Datasets/cartraffic03.mp4` | Multi-Object Tracking |
 
-**Demo Output:**  
+**Demo Output:**
 <img src="output/yolo_demo_frame.png" width="100%" alt="Object Tracking Demo"/>
 
 **Full Video:** [Download](output/yolo_detected.mp4)
 
-> **Key Features:**  
-> - Tracks 80+ COCO classes  
-> - Preserves original video aspect ratio  
+> **Key Features:**
+> - Tracks 80+ COCO classes
+> - Preserves original video aspect ratio
 > - Lightweight Nano model for real-time performance
 
 ---
@@ -41,18 +41,18 @@ Detects and tracks vehicles and pedestrians in traffic footage using multi-objec
 
 Estimates human body posture by detecting 17 keypoints in dynamic sports footage.
 
-| Model                    | Input Source                  | Task                     |
-|--------------------------|-------------------------------|--------------------------|
-| `yolo11x-pose.pt` (XLarge)| `Datasets/personsport04.mp4`  | Keypoint/Skeleton Detection |
+| Model | Input Source | Task |
+| :--- | :--- | :--- |
+| `yolo11x-pose.pt` (XLarge) | `Datasets/personsport04.mp4` | Keypoint/Skeleton Detection |
 
-**Demo Output:**  
+**Demo Output:**
 <img src="output/yolov11_pose_estimator_demo_frame.png" width="100%" alt="Pose Estimation Demo"/>
 
 **Full Video:** [Download](output/yolov11_pose_estimator_detected.mp4)
 
-> **Key Features:**  
-> - Custom green skeleton + red keypoints visualization  
-> - High accuracy using the largest YOLOv11 pose variant  
+> **Key Features:**
+> - Custom green skeleton + red keypoints visualization
+> - High accuracy using the largest YOLOv11 pose variant
 > - Filters for class 0 (Person only)
 
 ---
@@ -61,70 +61,95 @@ Estimates human body posture by detecting 17 keypoints in dynamic sports footage
 
 Performs pixel-level instance segmentation in dense crowd scenes.
 
-| Model                   | Input Source             | Task                  |
-|-------------------------|--------------------------|-----------------------|
-| `yolo11x-seg.pt` (XLarge)| `Datasets/crowd06.mp4`   | Instance Segmentation |
+| Model | Input Source | Task |
+| :--- | :--- | :--- |
+| `yolo11x-seg.pt` (XLarge) | `Datasets/crowd06.mp4` | Instance Segmentation |
 
-**Demo Output:**  
+**Demo Output:**
 <img src="output/yolov11_Segmentation_demo_frame.png" width="100%" alt="Segmentation Demo"/>
 
 **Full Video:** [Download](output/yolov11_Segmentation.mp4)
 
-> **Key Features:**  
-> - Semi-transparent masks with alpha blending (0.5)  
-> - Custom labels with black outlines for readability  
+> **Key Features:**
+> - Semi-transparent masks with alpha blending (0.5)
+> - Custom labels with black outlines for readability
 > - Precise separation of overlapping individuals
 
 ---
 ## 4. Optical Character Recognition (OCR) Comparison
-**Files:**  
-- `EasyOCR-TextRecognition.py`  
-- `PaddleOCR-TextRecognition.py`  
+**Files:**
+- `EasyOCR-TextRecognition.py`
+- `PaddleOCR-TextRecognition.py`
 - `Hybrid-TextRecognition.py`
 
 Comparative evaluation of three OCR approaches on challenging text (book pages, posters).
 
-| Strategy   | File                        | Description                                                                 |
-|------------|-----------------------------|-----------------------------------------------------------------------------|
-| **EasyOCR**    | `EasyOCR-TextRecognition.py`    | Fast, GPU-accelerated detection with good bounding boxes; solid baseline recognition |
-| **PaddleOCR**  | `PaddleOCR-TextRecognition.py`  | Industrial-grade accuracy, excellent with rotated/oriented text and complex fonts |
-| **Hybrid**     | `Hybrid-TextRecognition.py`     | **Best of both:** EasyOCR for tight bounding boxes → crop → PaddleOCR for superior recognition |
+| Strategy | File | Description |
+| :--- | :--- | :--- |
+| **EasyOCR** | `EasyOCR-TextRecognition.py` | Fast, GPU-accelerated detection with good bounding boxes; solid baseline recognition |
+| **PaddleOCR** | `PaddleOCR-TextRecognition.py` | Industrial-grade accuracy, excellent with rotated/oriented text and complex fonts |
+| **Hybrid** | `Hybrid-TextRecognition.py` | **Best of both:** EasyOCR for tight bounding boxes → crop → PaddleOCR for superior recognition |
 
 **Comparative Results (Bookpage01.jpg):**
 
-| EasyOCR Only                          | PaddleOCR Only                            | Hybrid (EasyOCR Boxes + PaddleOCR Text)          |
-|---------------------------------------|-------------------------------------------|--------------------------------------------------|
+| EasyOCR Only | PaddleOCR Only | Hybrid (EasyOCR Boxes + PaddleOCR Text) |
+| :---: | :---: | :---: |
 | <img src="output/text_rec_easyocr01.jpg" width="100%" alt="EasyOCR Result"/> | <img src="output/text_rec_paddleocr_only.jpg" width="100%" alt="PaddleOCR Result"/> | <img src="output/text_rec_hybrid_crop01.jpg" width="100%" alt="Hybrid Result"/> |
 
-> **Highlights:**  
-> - EasyOCR: Excellent tight boxes, orange theme visualization  
-> - PaddleOCR: Superior text accuracy, cyan-blue theme  
+> **Highlights:**
+> - EasyOCR: Excellent tight boxes, orange theme visualization
+> - PaddleOCR: Superior text accuracy, cyan-blue theme
 > - Hybrid: Combines best detection (EasyOCR) with best recognition (PaddleOCR via cropped regions)
 
-> **Tech Stack:**  
-> - EasyOCR: PyTorch-based, 80+ languages  
-> - PaddleOCR: PP-OCRv4/v5 lightweight models  
+> **Tech Stack:**
+> - EasyOCR: PyTorch-based, 80+ languages
+> - PaddleOCR: PP-OCRv4/v5 lightweight models
 > - Hybrid: Manual crop + predict pipeline with fallback
+
+---
+## 5. Object Tracking with Trajectory History (YOLOv11)
+**File:** `YOLO-ObjectTracking.py`
+
+This project implements robust, real-time object tracking, maintaining a trajectory (history trail) for each detected object (person). It utilizes the `YOLOv11` model for detection and tracking, and `imageio` with BGR-to-RGB conversion to ensure correct video output colors.
+
+| Model | Input Source | Task |
+| :--- | :--- | :--- |
+| **`yolo11x.pt`** (Extra Large) | `Datasets/personsport03.mp4` | Multi-Object Tracking & Trajectory |
+
+**Demo Output (GIF):**
+<img src="output/Yolo_Tracking.gif" width="100%" alt="Object Tracking with Trajectory GIF"/>
+
+**Full Video:** [Download](output/Yolo_Tracking.mp4)
+
+> **Key Features:**
+> * **Robust Tracking:** Includes logic to handle frames with zero detections/track IDs without crashing.
+> * **Trajectory Visualization:** Draws a blue trail (path history) behind each tracked object.
+> * **Optimized Output:** Uses `imageio` with BGR-to-RGB conversion to ensure correct color output in the final MP4 file.
 
 ---
 ## 🛠️ Getting Started
 
 ### Installation
 
-**For YOLO Projects (Tracking, Pose, Segmentation):**
+**For YOLO Projects (Tracking, Pose, Segmentation, Trajectory):**
 ```bash
 pip install ultralytics opencv-python numpy imageio imageio-ffmpeg
+
 ```
 
 **For OCR Projects:**
+
 ```bash
 pip install easyocr paddleocr opencv-python numpy
+
 ```
 
 ### Usage
+
 1. Place your input files in `Datasets/`
-2. Run any script: `python EasyOCR-TextRecognition.py`
+2. Run any script: `python YOLO-ObjectTracking.py`
 3. Results appear in `output/`
 
 ---
+
 **License:** MIT
