@@ -7,8 +7,6 @@ A focused collection of **Computer Vision** projects leveraging state-of-the-art
 
 These projects demonstrate practical implementation of advanced Deep Learning vision tasks using **Ultralytics**, **OpenCV**, and specialized OCR libraries.
 
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BMf-DhTcPjU41TeBkBZMVRDXG0y9pDeZ#scrollTo=duGun_CTpaKz)
-
 ---
 ## Repository Overview
 ### Folders
