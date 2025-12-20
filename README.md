@@ -1,6 +1,6 @@
 # Assortment of Small Vision ML-DL Projects
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img-shields.io/badge/license-MIT-green)
 ![Last Updated](https://img-shields.io/badge/last_updated-December_2025-blue)
 
 A focused collection of **Computer Vision** projects leveraging state-of-the-art models (**YOLOv8**, **YOLOv11**, **PaddleOCR**, and **EasyOCR**) for Object Tracking, Human Pose Estimation, Segmentation, and Text Recognition.
@@ -127,11 +127,31 @@ This project implements robust, real-time object tracking, maintaining a traject
 > * **Optimized Output:** Uses `imageio` with BGR-to-RGB conversion to ensure correct color output in the final MP4 file.
 
 ---
+## 6. Person Passthrough Counter & CSV Logging (YOLOv11)
+**File:** `YOLO-PersonPassCounter.py`
+
+A tracking project designed to count the number of unique persons who pass through a defined "Target Zone" in a video frame. It logs the final results to a CSV file.
+
+| Model | Input Source | Task |
+| :--- | :--- | :--- |
+| **`yolo11n.pt`** (Nano) | `Datasets/crowd06.mp4` | Zone Counting & CSV Logging |
+
+**Demo Output (Frame):**
+<img src="output/demo_frame01.jpg" width="100%" alt="Person Passthrough Counter Demo"/>
+
+**Full Video:** [Download](output/yolov_person_passthrough_counter.mp4)
+
+> **Key Features:**
+> * **State Machine Logic:** Uses dictionary tracking (`id_position_dict`) to ensure a person is only counted once per entry/exit cycle.
+> * **Target Zone:** A defined red box dynamically scaled to the center of the frame.
+> * **CSV Output:** Exports the final list of unique person IDs and their total pass count.
+
+---
 ## 🛠️ Getting Started
 
 ### Installation
 
-**For YOLO Projects (Tracking, Pose, Segmentation, Trajectory):**
+**For YOLO Projects (Tracking, Pose, Segmentation, Counting):**
 ```bash
 pip install ultralytics opencv-python numpy imageio imageio-ffmpeg
 
@@ -147,7 +167,14 @@ pip install easyocr paddleocr opencv-python numpy
 ### Usage
 
 1. Place your input files in `Datasets/`
-2. Run any script: `python YOLO-ObjectTracking.py`
+2. Run any script:
+
+```bash
+python YOLO-PersonPassCounter.py
+python YOLO-ObjectTracking.py
+
+```
+
 3. Results appear in `output/`
 
 ---
