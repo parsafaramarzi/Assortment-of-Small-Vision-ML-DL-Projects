@@ -1,7 +1,7 @@
 # Assortment of Small Vision ML-DL Projects
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img-shields.io/badge/license-MIT-green)
-![Last Updated](https://img-shields.io/badge/last_updated-December_2025-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Last Updated](https://img.shields.io/badge/last_updated-December_2025-blue)
 
 A focused collection of **Computer Vision** projects leveraging state-of-the-art models (**YOLOv8**, **YOLOv11**, **PaddleOCR**, and **EasyOCR**) for Object Tracking, Human Pose Estimation, Segmentation, and Text Recognition.
 
